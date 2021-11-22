@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { VRCanvas } from '@react-three/xr'
+import { Box } from './box';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <VRCanvas >
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        <Box position={[-1.2, 0, 0]} />
+        <Box position={[1.2, 0, 0]} />
+      </VRCanvas>
     </div>
   );
 }
